@@ -14,8 +14,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             NavigationLink(destination:
-                            // CameraView()
-                            CameraPreview(session: AVCaptureSession())
+                            CameraView()
+                            // CameraPreview(session: AVCaptureSession())
                                 .navigationBarTitle("Take Ingredient List Photo", displayMode: .inline)
                                 // .frame(height: 600)
             ) {

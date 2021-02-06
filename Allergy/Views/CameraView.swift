@@ -65,6 +65,7 @@ struct CameraView: View {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 VStack {
+                    Spacer(minLength: 10)
                     Button(action: {
                         model.switchFlash()
                     }, label: {
@@ -72,6 +73,7 @@ struct CameraView: View {
                             .font(.system(size: 20, weight: .medium, design: .default))
                     })
                     .accentColor(model.isFlashOn ? .yellow : .white)
+                    Spacer(minLength: 10)
                     
                     CameraPreview(session: model.session)
                         .gesture(
@@ -99,14 +101,7 @@ struct CameraView: View {
                                 model.alertError.primaryAction?()
                             }))
                         })
-                        .overlay(
-                            Group {
-                                if model.willCapturePhoto {
-                                    Color.black
-                                }
-                            }
-                        )
-                        .animation(.easeInOut)
+                            .animation(.easeInOut)
                     
                     
                     HStack {
@@ -121,7 +116,7 @@ struct CameraView: View {
                         flipCameraButton
                         
                     }
-                    .padding(.horizontal, 20)
+                    .padding(20)
                 }
             }
         }
