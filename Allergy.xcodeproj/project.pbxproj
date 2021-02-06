@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,10 @@
 		4EB1327925CEF62800BD63F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1327825CEF62800BD63F7 /* ContentView.swift */; };
 		4EB1327B25CEF62A00BD63F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1327A25CEF62A00BD63F7 /* Assets.xcassets */; };
 		4EB1327E25CEF62A00BD63F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1327D25CEF62A00BD63F7 /* Preview Assets.xcassets */; };
-		4EB1329325CF028000BD63F7 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1329225CF028000BD63F7 /* CameraView.swift */; };
+		4EB1329825CF050700BD63F7 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB1329725CF050700BD63F7 /* Camera-SwiftUI */; };
+		4EB132AD25CF0CB100BD63F7 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB132AC25CF0CB100BD63F7 /* CameraView */; };
+		4EB132B025CF0EE300BD63F7 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132AF25CF0EE300BD63F7 /* CameraViewModel.swift */; };
+		4EB132B325CF0F2800BD63F7 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132B225CF0F2800BD63F7 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +24,8 @@
 		4EB1327A25CEF62A00BD63F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EB1327D25CEF62A00BD63F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4EB1327F25CEF62A00BD63F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EB1329225CF028000BD63F7 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		4EB132AF25CF0EE300BD63F7 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		4EB132B225CF0F2800BD63F7 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB132AD25CF0CB100BD63F7 /* CameraView in Frameworks */,
+				4EB1329825CF050700BD63F7 /* Camera-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,7 @@
 		4EB1329025CF009600BD63F7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4EB132AF25CF0EE300BD63F7 /* CameraViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -91,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4EB1327825CEF62800BD63F7 /* ContentView.swift */,
-				4EB1329225CF028000BD63F7 /* CameraView.swift */,
+				4EB132B225CF0F2800BD63F7 /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +119,10 @@
 			dependencies = (
 			);
 			name = Allergy;
+			packageProductDependencies = (
+				4EB1329725CF050700BD63F7 /* Camera-SwiftUI */,
+				4EB132AC25CF0CB100BD63F7 /* CameraView */,
+			);
 			productName = Allergy;
 			productReference = 4EB1327325CEF62800BD63F7 /* Allergy.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +150,10 @@
 				Base,
 			);
 			mainGroup = 4EB1326A25CEF62800BD63F7;
+			packageReferences = (
+				4EB1329625CF050700BD63F7 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+				4EB132AB25CF0CB100BD63F7 /* XCRemoteSwiftPackageReference "CameraView" */,
+			);
 			productRefGroup = 4EB1327425CEF62800BD63F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,9 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EB1329325CF028000BD63F7 /* CameraView.swift in Sources */,
 				4EB1327925CEF62800BD63F7 /* ContentView.swift in Sources */,
 				4EB1327725CEF62800BD63F7 /* AllergyApp.swift in Sources */,
+				4EB132B025CF0EE300BD63F7 /* CameraViewModel.swift in Sources */,
+				4EB132B325CF0F2800BD63F7 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +372,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4EB1329625CF050700BD63F7 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+		4EB132AB25CF0CB100BD63F7 /* XCRemoteSwiftPackageReference "CameraView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/brettfazio/CameraView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4EB1329725CF050700BD63F7 /* Camera-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EB1329625CF050700BD63F7 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
+			productName = "Camera-SwiftUI";
+		};
+		4EB132AC25CF0CB100BD63F7 /* CameraView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4EB132AB25CF0CB100BD63F7 /* XCRemoteSwiftPackageReference "CameraView" */;
+			productName = CameraView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4EB1326B25CEF62800BD63F7 /* Project object */;
 }
