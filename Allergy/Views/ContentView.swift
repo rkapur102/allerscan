@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Commit test :)")
-            .padding()
+        NavigationView {
+            NavigationLink(destination: CameraView()) {
+                Text("Take Ingredient List Photo!")
+                    .padding()
+            }
+        }
     }
 }
 
