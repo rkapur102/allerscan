@@ -7,5 +7,8 @@ target 'Allergy' do
 
   # Pods for Allergy
 	pod 'Firebase/Analytics'
+	pod 'Firebase/MLVision', '6.25.0'
+	# If using an on-device API:
+	pod 'Firebase/MLVisionTextModel', '6.25.0'
 
 end
