@@ -9,26 +9,41 @@ import SwiftUI
 import Camera_SwiftUI
 
 struct CameraView: View {
-    @StateObject var model = CameraViewModel()
-    
+    @EnvironmentObject var model: CameraViewModel
     @State var currentZoomFactor: CGFloat = 1.0
+    @State var selection: Int? = nil
+    var allergiesArray: [String]
     
     var captureButton: some View {
-        Button(action: {
-            model.capturePhoto()
-        }, label: {
-            Circle()
-                .foregroundColor(.white)
-                .frame(width: 80, height: 80, alignment: .center)
-                .overlay(
-                    Circle()
-                        .stroke(Color.black.opacity(0.8), lineWidth: 2)
-                        .frame(width: 65, height: 65, alignment: .center)
-                )
-        })
+        NavigationLink(destination: Processing(allergiesArray: allergiesArray)
+                                        .environmentObject(model)
+                                        .environmentObject(ImageAndText())
+                       , tag: 1, selection: $selection) {
+            Button(action: {
+                model.capturePhoto()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    if model.photo != nil {
+                        self.selection = 1
+                    }
+                }
+            }, label: {
+                Circle()
+                    .foregroundColor(.white)
+                    .frame(width: 80, height: 80, alignment: .center)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.black.opacity(0.8), lineWidth: 2)
+                            .frame(width: 65, height: 65, alignment: .center)
+                    )
+            })
+        }
     }
     
     var capturedPhotoThumbnail: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .frame(width: 60, height: 60, alignment: .center)
+            .foregroundColor(.black)
+        /*
         Group {
             if model.photo != nil {
                 Image(uiImage: model.photo.image!)
@@ -44,6 +59,7 @@ struct CameraView: View {
                     .foregroundColor(.black)
             }
         }
+         */
     }
     
     var flipCameraButton: some View {
@@ -59,21 +75,28 @@ struct CameraView: View {
         })
     }
     
+    var flash: some View {
+        Button(action: {
+            model.switchFlash()
+        }, label: {
+            Circle()
+                .foregroundColor(Color.gray.opacity(0.2))
+                .frame(width: 45, height: 45, alignment: .center)
+                .overlay(
+                    Image(systemName: model.isFlashOn ? "bolt.fill" : "bolt.slash.fill")
+                        .font(.system(size: 20, weight: .medium, design: .default))
+                )
+        })
+        .accentColor(model.isFlashOn ? .yellow : .white)
+    }
+    
     var body: some View {
         GeometryReader { reader in
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    Spacer(minLength: 10)
-                    Button(action: {
-                        model.switchFlash()
-                    }, label: {
-                        Image(systemName: model.isFlashOn ? "bolt.fill" : "bolt.slash.fill")
-                            .font(.system(size: 20, weight: .medium, design: .default))
-                    })
-                    .accentColor(model.isFlashOn ? .yellow : .white)
-                    Spacer(minLength: 10)
+                    Spacer(minLength: 20)
                     
                     CameraPreview(session: model.session)
                         .gesture(
@@ -105,7 +128,7 @@ struct CameraView: View {
                     
                     
                     HStack {
-                        capturedPhotoThumbnail
+                        flash
                         
                         Spacer()
                         
@@ -116,6 +139,7 @@ struct CameraView: View {
                         flipCameraButton
                         
                     }
+                    .padding(.horizontal, 30)
                     .padding(20)
                 }
             }

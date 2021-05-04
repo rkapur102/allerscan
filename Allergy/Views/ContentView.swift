@@ -12,45 +12,100 @@ import AVFoundation
 
 struct ContentView: View {
     @State var allergies: String = ""
-    @State private var selection = 1
+    var languageSelection: Int
     
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack() {
-                    Text("Welcome! Please choose your language and enter your allergies. ")
-                    Picker(selection: $selection, label: Text("Languages:")) {
-                                    Text("English").tag(1)
-                                    Text("Spanish").tag(2)
-                                    Text("French").tag(3)
-                                }
-                    TextField("Enter allergies here (i.e. Eggs, Fish, Milk...)", text: $allergies)
-                    let array = allergies.components(separatedBy: ", ")
-                    Text("Your allergies: ")
-                    List(array, id: \.self) { string in
-                        Text(string)
-                    }
-                    
-                    NavigationLink(destination:
-                                    CameraView()
-                                    // CameraPreview(session: AVCaptureSession())
-                                        .navigationBarTitle("Take Ingredient List Photo", displayMode: .inline)
-                                        // .frame(height: 600)
-                    ) {
-                        Text("Take Ingredient List Photo!")
-                            .padding()
-                    }
-                    .navigationBarTitle("Enter Allergies")
-                    .navigationBarHidden(true)
+            VStack() {
+                Spacer()
+                Image(uiImage: UIImage(named: "allerscan")!)
+                    .resizable()
+                    .frame(height:200)
+                    .padding(.horizontal, 20)
+                
+                Spacer()
+                
+                TextField("Enter allergies here: (i.e. Eggs, Fish, Milk...)", text: $allergies).font(.system(.title2, design: .serif)).lineLimit(2).padding(20)
+                let array = allergies.components(separatedBy: ", ")
+                Spacer()
+                Text("Your allergies: ").font(.system(.title2, design: .serif))
+                List(array, id: \.self) { string in
+                    Text(string).font(.system(.title2, design: .serif))
                 }
-                .padding()
+                
+                Spacer()
+                
+                NavigationLink(destination:
+                                CameraView(allergiesArray: array).environmentObject(CameraViewModel())
+                                // CameraPreview(session: AVCaptureSession())
+                                    .navigationBarTitle("Take Ingredient List Photo", displayMode: .inline)
+                                    .accentColor(Color(.systemGreen))
+                                    // .frame(height: 600)
+                ) {
+                    HStack {
+                        Text("Take Ingredient List Photo!")
+                            .fontWeight(.bold)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                        Arrows()
+                    }
+                        .padding(.vertical, 7)
+                        .padding(.horizontal, 15)
+                    .background(Color(.systemGreen))
+                        .cornerRadius(50)
+                    .padding()
+                    // Text("Take Ingredient List Photo!")
+                        // .padding()
+                }
+                // .padding(.bottom, 40)
+                Spacer()
             }
+            .navigationBarTitle("Enter Allergens", displayMode: .inline)
+            // .navigationBarHidden(true)
+            .accentColor(Color(.systemGreen))
+            .padding()
+    }
+}
+
+struct ArrowShape: SwiftUI.Shape {
+    func path(in rect: CGRect) -> SwiftUI.Path {
+        var path = Path()
+
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: rect.size.width, y: rect.size.height/2.0))
+        path.addLine(to: CGPoint(x: 0, y: rect.size.height))
+
+        return path
+    }
+}
+
+struct Arrows: View {
+    private let arrowCount = 3
+
+    @State var fade: Double = 0.5
+
+    var body: some View {
+        HStack {
+            ForEach(0..<self.arrowCount) { i in
+                ArrowShape()
+                    .stroke(style: StrokeStyle(lineWidth: CGFloat(3),
+                                              lineCap: .round,
+                                              lineJoin: .round))
+                    .foregroundColor(Color.white)
+                    .aspectRatio(CGSize(width: 28, height: 70), contentMode: .fit)
+                    .frame(maxWidth: 5)
+                    .animation(nil)
+                    .opacity(self.fade)
+                    .animation(
+                        Animation.easeOut(duration: 0.8)
+                        .repeatForever(autoreverses: true)
+                        .delay(0.2 * Double(i))
+                    )
+            }
+        }
+        .frame(width: 30, height: 10)
+        .onAppear() {
+            self.fade = 1.0
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
