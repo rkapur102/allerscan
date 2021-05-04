@@ -6,7 +6,7 @@ AllerScan is an allergy detection iOS application that scans food labels (in mul
 
 The AllerScan interface was built by Rhea Kapur and Eva Schiller in Xcode using SwiftUI. The allergy detection process relies on text recognition for image techniques, which was implemented by Rhea Kapur and Eva Schiller using Google Cloud's Firebase ML Toolkit. The translation features were implemented by Olivia Taylor through Google's Cloud Translation API. Emma Huang created all visuals and product design features.
 
-AllerScan won first place for the Best Use of Google Cloud prize, awarded by a team of Google engineers, at FemmeHacks!
+**AllerScan won first place for the Best Use of Google Cloud prize, awarded by a team of Google engineers, at FemmeHacks!**
 
 Check out the project listing on Devpost for screenshots and a demo video: https://devpost.com/software/allergy
 
