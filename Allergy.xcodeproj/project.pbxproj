@@ -11,10 +11,14 @@
 		4EB1327925CEF62800BD63F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1327825CEF62800BD63F7 /* ContentView.swift */; };
 		4EB1327B25CEF62A00BD63F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1327A25CEF62A00BD63F7 /* Assets.xcassets */; };
 		4EB1327E25CEF62A00BD63F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1327D25CEF62A00BD63F7 /* Preview Assets.xcassets */; };
-		4EB1329825CF050700BD63F7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB1329725CF050700BD63F7 /* SwiftPackageProductDependency */; };
-		4EB132AD25CF0CB100BD63F7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB132AC25CF0CB100BD63F7 /* SwiftPackageProductDependency */; };
+		4EB1329825CF050700BD63F7 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB1329725CF050700BD63F7 /* Camera-SwiftUI */; };
+		4EB132AD25CF0CB100BD63F7 /* CameraView in Frameworks */ = {isa = PBXBuildFile; productRef = 4EB132AC25CF0CB100BD63F7 /* CameraView */; };
 		4EB132B025CF0EE300BD63F7 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132AF25CF0EE300BD63F7 /* CameraViewModel.swift */; };
 		4EB132B325CF0F2800BD63F7 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132B225CF0F2800BD63F7 /* CameraView.swift */; };
+		4EB132C425CF216C00BD63F7 /* Processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132C325CF216C00BD63F7 /* Processing.swift */; };
+		4EB132C725CF236900BD63F7 /* ImageAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132C625CF236900BD63F7 /* ImageAndText.swift */; };
+		4EB132CA25CF320A00BD63F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB132C925CF320A00BD63F7 /* GoogleService-Info.plist */; };
+		4EB132EF25CF5D6300BD63F7 /* LogoLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB132EE25CF5D6300BD63F7 /* LogoLanguage.swift */; };
 		690A74BF24A7587782DD9365 /* Pods_Allergy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B42D158E7BD3A0D1A7D0D8A /* Pods_Allergy.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		4EB1327F25CEF62A00BD63F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EB132AF25CF0EE300BD63F7 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		4EB132B225CF0F2800BD63F7 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		4EB132C325CF216C00BD63F7 /* Processing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processing.swift; sourceTree = "<group>"; };
+		4EB132C625CF236900BD63F7 /* ImageAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAndText.swift; sourceTree = "<group>"; };
+		4EB132C925CF320A00BD63F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../var/folders/bn/2rcwfby96_zc97p2bm134zc80000gn/T/com.apple.iChat/Messages/Transfers/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4EB132EE25CF5D6300BD63F7 /* LogoLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLanguage.swift; sourceTree = "<group>"; };
 		6B42D158E7BD3A0D1A7D0D8A /* Pods_Allergy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Allergy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D866B8ADB5291BBCD9EE701 /* Pods-Allergy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Allergy.debug.xcconfig"; path = "Target Support Files/Pods-Allergy/Pods-Allergy.debug.xcconfig"; sourceTree = "<group>"; };
 		EA95F26A7B67CDB66439056A /* Pods-Allergy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Allergy.release.xcconfig"; path = "Target Support Files/Pods-Allergy/Pods-Allergy.release.xcconfig"; sourceTree = "<group>"; };
@@ -37,8 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EB132AD25CF0CB100BD63F7 /* BuildFile in Frameworks */,
-				4EB1329825CF050700BD63F7 /* BuildFile in Frameworks */,
+				4EB132AD25CF0CB100BD63F7 /* CameraView in Frameworks */,
+				4EB1329825CF050700BD63F7 /* Camera-SwiftUI in Frameworks */,
 				690A74BF24A7587782DD9365 /* Pods_Allergy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +81,7 @@
 				4EB1327625CEF62800BD63F7 /* AllergyApp.swift */,
 				4EB1327A25CEF62A00BD63F7 /* Assets.xcassets */,
 				4EB1327F25CEF62A00BD63F7 /* Info.plist */,
+				4EB132C925CF320A00BD63F7 /* GoogleService-Info.plist */,
 				4EB1327C25CEF62A00BD63F7 /* Preview Content */,
 			);
 			path = Allergy;
@@ -89,6 +98,7 @@
 		4EB1328F25CF009100BD63F7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4EB132C625CF236900BD63F7 /* ImageAndText.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,6 +116,8 @@
 			children = (
 				4EB1327825CEF62800BD63F7 /* ContentView.swift */,
 				4EB132B225CF0F2800BD63F7 /* CameraView.swift */,
+				4EB132C325CF216C00BD63F7 /* Processing.swift */,
+				4EB132EE25CF5D6300BD63F7 /* LogoLanguage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,7 +136,6 @@
 				9D866B8ADB5291BBCD9EE701 /* Pods-Allergy.debug.xcconfig */,
 				EA95F26A7B67CDB66439056A /* Pods-Allergy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +151,7 @@
 				4EB1327025CEF62800BD63F7 /* Frameworks */,
 				4EB1327125CEF62800BD63F7 /* Resources */,
 				244CA627D5A168109B0DC8FC /* [CP] Embed Pods Frameworks */,
+				FBFE74B2D3C20E2DD697919B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,8 +159,8 @@
 			);
 			name = Allergy;
 			packageProductDependencies = (
-				4EB1329725CF050700BD63F7 /* SwiftPackageProductDependency */,
-				4EB132AC25CF0CB100BD63F7 /* SwiftPackageProductDependency */,
+				4EB1329725CF050700BD63F7 /* Camera-SwiftUI */,
+				4EB132AC25CF0CB100BD63F7 /* CameraView */,
 			);
 			productName = Allergy;
 			productReference = 4EB1327325CEF62800BD63F7 /* Allergy.app */;
@@ -178,8 +190,8 @@
 			);
 			mainGroup = 4EB1326A25CEF62800BD63F7;
 			packageReferences = (
-				4EB1329625CF050700BD63F7 /* RemoteSwiftPackageReference */,
-				4EB132AB25CF0CB100BD63F7 /* RemoteSwiftPackageReference */,
+				4EB1329625CF050700BD63F7 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+				4EB132AB25CF0CB100BD63F7 /* XCRemoteSwiftPackageReference "CameraView" */,
 			);
 			productRefGroup = 4EB1327425CEF62800BD63F7 /* Products */;
 			projectDirPath = "";
@@ -197,6 +209,7 @@
 			files = (
 				4EB1327E25CEF62A00BD63F7 /* Preview Assets.xcassets in Resources */,
 				4EB1327B25CEF62A00BD63F7 /* Assets.xcassets in Resources */,
+				4EB132CA25CF320A00BD63F7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +255,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FBFE74B2D3C20E2DD697919B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Allergy/Pods-Allergy-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Allergy/Pods-Allergy-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Allergy/Pods-Allergy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -249,10 +279,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB132EF25CF5D6300BD63F7 /* LogoLanguage.swift in Sources */,
 				4EB1327925CEF62800BD63F7 /* ContentView.swift in Sources */,
 				4EB1327725CEF62800BD63F7 /* AllergyApp.swift in Sources */,
 				4EB132B025CF0EE300BD63F7 /* CameraViewModel.swift in Sources */,
 				4EB132B325CF0F2800BD63F7 /* CameraView.swift in Sources */,
+				4EB132C725CF236900BD63F7 /* ImageAndText.swift in Sources */,
+				4EB132C425CF216C00BD63F7 /* Processing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +478,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4EB1329625CF050700BD63F7 /* RemoteSwiftPackageReference */ = {
+		4EB1329625CF050700BD63F7 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI.git";
 			requirement = {
@@ -453,7 +486,7 @@
 				minimumVersion = 0.0.5;
 			};
 		};
-		4EB132AB25CF0CB100BD63F7 /* RemoteSwiftPackageReference */ = {
+		4EB132AB25CF0CB100BD63F7 /* XCRemoteSwiftPackageReference "CameraView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/brettfazio/CameraView";
 			requirement = {
@@ -464,14 +497,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4EB1329725CF050700BD63F7 /* SwiftPackageProductDependency */ = {
+		4EB1329725CF050700BD63F7 /* Camera-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4EB1329625CF050700BD63F7 /* RemoteSwiftPackageReference */;
+			package = 4EB1329625CF050700BD63F7 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
 			productName = "Camera-SwiftUI";
 		};
-		4EB132AC25CF0CB100BD63F7 /* SwiftPackageProductDependency */ = {
+		4EB132AC25CF0CB100BD63F7 /* CameraView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4EB132AB25CF0CB100BD63F7 /* RemoteSwiftPackageReference */;
+			package = 4EB132AB25CF0CB100BD63F7 /* XCRemoteSwiftPackageReference "CameraView" */;
 			productName = CameraView;
 		};
 /* End XCSwiftPackageProductDependency section */
